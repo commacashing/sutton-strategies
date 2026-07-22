@@ -60,7 +60,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:20px 6
 .hero-ctas{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap}
 .hero-mark{position:relative;display:flex;justify-content:center}
 .hero-mark svg{width:min(380px,70vw);height:auto}
-.s-stroke{fill:none;stroke:var(--green);stroke-width:5.5;stroke-linecap:round;stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 2.6s cubic-bezier(.4,0,.2,1) .3s forwards}
+.s-stroke{fill:none;stroke:var(--green);stroke-width:5.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 2.6s cubic-bezier(.4,0,.2,1) .3s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion: reduce){
   .s-stroke{animation:none;stroke-dashoffset:0}
@@ -140,7 +140,7 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
 <header>
   <nav>
     <a class="brand" href="#top" aria-label="Sutton Strategies home">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M78 22 C60 4, 30 10, 30 32 C30 52, 74 48, 74 68 C74 92, 38 98, 22 78" fill="none" stroke="#1E362B" stroke-width="6" stroke-linecap="round"/></svg>
+      <img src="images/sutton-mark.png" alt="" width="34" height="32" style="display:block">
       <span class="wordmark"><span class="primary">SUTTON</span><span class="secondary">STRATEGIES</span></span>
     </a>
     <div class="nav-links">
@@ -169,7 +169,7 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
     </div>
     <div class="hero-mark" aria-hidden="true">
       <svg viewBox="0 0 300 340">
-        <path class="s-stroke" d="M235 60 C210 18, 120 8, 95 55 C70 100, 130 130, 165 155 C205 185, 235 215, 210 265 C185 315, 90 325, 62 275"/>
+        <path class="s-stroke" d="M 188.6 96.9 C 190.0 95.1, 194.7 89.8, 196.9 86.3 C 199.2 82.8, 201.2 79.2, 202.1 75.9 C 203.0 72.6, 203.2 69.3, 202.3 66.7 C 201.4 64.0, 199.3 61.7, 196.8 60.0 C 194.4 58.4, 191.1 57.4, 187.8 56.8 C 184.5 56.2, 180.6 56.2, 177.0 56.4 C 173.4 56.5, 169.7 57.1, 166.1 57.7 C 162.4 58.3, 158.8 59.2, 155.1 60.1 C 151.5 61.0, 147.9 62.1, 144.2 63.2 C 140.6 64.4, 136.9 65.7, 133.3 67.2 C 129.6 68.6, 126.0 70.1, 122.3 71.8 C 118.7 73.5, 115.0 75.3, 111.4 77.3 C 107.7 79.3, 104.0 81.4, 100.4 83.8 C 96.9 86.2, 93.2 88.8, 89.9 91.7 C 86.5 94.5, 83.2 97.7, 80.6 100.9 C 78.0 104.2, 75.6 107.7, 74.2 111.2 C 72.8 114.7, 72.2 118.4, 72.4 121.8 C 72.7 125.2, 73.9 128.7, 75.8 131.7 C 77.6 134.8, 80.5 137.7, 83.4 140.2 C 86.4 142.7, 90.0 144.8, 93.4 146.8 C 96.9 148.7, 100.7 150.2, 104.3 151.8 C 107.9 153.3, 111.6 154.5, 115.2 155.8 C 118.9 157.1, 122.5 158.3, 126.2 159.6 C 129.8 160.8, 133.5 162.0, 137.1 163.3 C 140.8 164.5, 144.4 165.9, 148.0 167.2 C 151.6 168.5, 155.2 169.7, 158.8 171.1 C 162.4 172.4, 165.9 173.8, 169.4 175.3 C 173.0 176.8, 176.6 178.2, 180.0 180.2 C 183.4 182.2, 186.9 184.6, 189.8 187.2 C 192.7 189.9, 195.5 192.9, 197.5 196.1 C 199.4 199.3, 200.9 202.9, 201.4 206.5 C 202.0 210.0, 201.8 213.7, 200.8 217.3 C 199.9 220.8, 198.0 224.5, 195.8 227.9 C 193.6 231.3, 190.7 234.8, 187.6 237.9 C 184.6 241.0, 181.0 243.8, 177.5 246.5 C 174.1 249.2, 170.4 251.6, 166.7 253.8 C 163.1 256.0, 159.4 258.0, 155.8 259.9 C 152.1 261.8, 148.5 263.5, 144.9 265.1 C 141.2 266.7, 137.6 268.2, 133.9 269.6 C 130.3 271.0, 126.6 272.3, 123.0 273.5 C 119.3 274.7, 115.7 275.8, 112.0 276.8 C 108.4 277.8, 104.7 278.6, 101.1 279.5 C 97.4 280.3, 93.8 281.1, 90.1 281.7 C 86.5 282.3, 82.9 282.9, 79.2 283.3 C 75.6 283.7, 71.9 284.0, 68.3 284.1 C 64.6 284.2, 60.9 284.3, 57.3 283.9 C 53.7 283.5, 49.9 283.0, 46.7 281.9 C 43.4 280.8, 40.1 279.3, 37.7 277.3 C 35.3 275.3, 33.2 272.7, 32.3 269.8 C 31.4 267.0, 31.5 263.5, 32.4 260.2 C 33.4 256.9, 35.4 253.3, 37.8 249.9 C 40.2 246.6, 43.6 243.3, 46.8 240.2 C 50.1 237.2, 53.8 234.3, 57.3 231.6 C 60.9 228.9, 64.6 226.5, 68.3 224.1 C 71.9 221.8, 75.6 219.6, 79.2 217.5 C 82.9 215.4, 86.5 213.3, 90.1 211.4 C 93.8 209.5, 97.4 207.7, 101.1 205.9 C 104.7 204.1, 108.4 202.4, 112.0 200.8 C 115.7 199.2, 119.3 197.6, 123.0 196.1 C 126.6 194.6, 130.3 193.0, 133.9 191.6 C 137.6 190.1, 141.0 188.8, 144.9 187.4 C 148.7 186.0, 152.7 184.5, 156.9 183.1 C 161.2 181.8, 165.6 180.4, 170.2 179.0 C 174.8 177.6, 179.9 176.1, 184.5 174.8 C 189.1 173.5, 193.5 172.3, 197.8 171.1 C 202.0 170.0, 206.0 168.9, 209.9 168.0 C 213.7 167.0, 217.1 166.3, 220.8 165.5 C 224.4 164.7, 228.1 163.9, 231.7 163.2 C 235.4 162.5, 239.0 161.8, 242.7 161.1 C 246.3 160.5, 250.0 159.8, 253.6 159.2 C 257.3 158.6, 260.9 158.1, 264.6 157.5 C 268.2 157.0, 273.7 156.4, 275.5 156.1"/>
       </svg>
     </div>
   </div>
@@ -247,7 +247,7 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
     <p class="eyebrow">Contact</p>
     <h2>Every engagement begins<br>with a conversation.</h2>
     <p class="sub">No commitment, no pitch. Tell us where your practice stands, and we'll tell you honestly what your options look like.</p>
-    <a class="btn solid" href="mailto:hello@suttonstrategies.com">hello@suttonstrategies.com</a>
+    <a class="btn solid" href="mailto:mac@suttonstrategies.com">mac@suttonstrategies.com</a>
     <p class="quiet-note">All inquiries held in strict confidence.</p>
   </div>
 </section>
