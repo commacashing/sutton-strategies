@@ -41,6 +41,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:20px 6
 .nav-links{display:flex;gap:38px;align-items:center}
 .nav-links a{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--green);opacity:.85;transition:opacity .2s}
 .nav-links a:hover{opacity:1}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:24px;background:none;border:none;cursor:pointer;padding:0}
+.nav-toggle span{display:block;width:100%;height:2px;background:var(--green)}
 .btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;border:1px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:background .25s,color .25s}
 .btn:hover{background:var(--green);color:var(--cream)}
 .btn.solid{background:var(--green);color:var(--cream)}
@@ -120,7 +122,11 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
 .reveal.in{opacity:1;transform:none}
 
 @media(max-width:900px){
-  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--cream);border-top:1px solid rgba(30,54,43,.12);max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .nav-links.open{max-height:400px}
+  .nav-links a{padding:16px 6vw;width:100%}
+  .nav-links .btn{margin:12px 6vw;width:calc(100% - 12vw)}
   .hero{padding:70px 0 90px}
   .hero-grid{grid-template-columns:1fr;gap:60px}
   .hero-mark{order:-1}
@@ -143,12 +149,15 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
       <img src="images/sutton-mark.png" alt="" width="34" height="32" style="display:block">
       <span class="wordmark"><span class="primary">SUTTON</span><span class="secondary">STRATEGIES</span></span>
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#approach">Approach</a>
       <a href="#serve">Who We Serve</a>
       <a href="#firm">The Firm</a>
       <a class="btn nav-cta" href="#contact">Start a Conversation</a>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 </header>
 
@@ -266,6 +275,19 @@ const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
 },{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
 </script>
 </body>
 </html>
