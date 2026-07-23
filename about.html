@@ -79,12 +79,15 @@ section{padding:110px 0}
 .section-head p{margin-top:22px;font-size:18px;opacity:.85}
 
 /* approach */
-.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(247,244,236,.25)}
-.approach-item{padding:44px 36px 8px 0;border-right:1px solid rgba(247,244,236,.18)}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(30,54,43,.2)}
+.approach-item{padding:44px 36px 8px 0;border-right:1px solid rgba(30,54,43,.15)}
 .approach-item:last-child{border-right:none}
 .approach-item + .approach-item{padding-left:36px}
-.approach-item h3{font-family:var(--serif);font-weight:400;font-size:27px;margin-bottom:16px}
+.approach-item h3{font-family:var(--serif);font-weight:400;font-size:27px;margin-bottom:16px;color:var(--green)}
 .approach-item p{font-size:16px;line-height:1.7;opacity:.82}
+.on-green .approach-grid{border-top-color:rgba(247,244,236,.25)}
+.on-green .approach-item{border-right-color:rgba(247,244,236,.18)}
+.on-green .approach-item h3{color:var(--cream)}
 
 /* serve */
 .serve-list{border-top:1px solid rgba(30,54,43,.2)}
@@ -156,7 +159,6 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
       <span class="wordmark"><span class="primary">SUTTON</span><span class="secondary">STRATEGIES</span></span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="index.html#approach">Approach</a>
       <a href="services.html">Who We Serve</a>
       <a href="about.html">The Firm</a>
       <a class="btn nav-cta" href="contact.html">Start a Conversation</a>
@@ -179,12 +181,36 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
   </div>
 </section>
 
-<section id="story">
+<section class="on-green" id="story">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Our Story</p>
       <h2>Small on purpose.</h2>
       <p>We represent a select group of advisors and firms at a time, so every transition gets the attention a life-changing decision deserves. Every engagement is handled by a founding partner, start to finish — no handoffs, no junior associates running your search.</p>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Our Approach</p>
+      <h2>Fewer engagements. Deeper work.</h2>
+      <p>Sutton Strategies is a boutique by design. We represent a select group of advisors and firms at a time, so every transition gets the attention a life-changing decision deserves.</p>
+    </div>
+    <div class="approach-grid reveal">
+      <div class="approach-item">
+        <h3>Discretion first</h3>
+        <p>Exploring a move is sensitive. Conversations stay confidential from the first call through the day you're ready — if you're ever ready. No pressure, no noise.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Fit over placement</h3>
+        <p>We map your practice, your clients, and your economics against the full landscape — wirehouse, regional, independent — and tell you the truth about each option, including staying put.</p>
+      </div>
+      <div class="approach-item">
+        <h3>The long view</h3>
+        <p>A transition isn't the finish line. We structure moves around where your business should be in ten years, not just the deal on the table today.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -222,7 +248,6 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
     <div class="foot">
       <span class="wordmark"><span class="primary">SUTTON</span><span class="secondary">STRATEGIES</span></span>
       <div class="foot-links">
-        <a href="index.html#approach">Approach</a>
         <a href="services.html">Who We Serve</a>
         <a href="about.html">The Firm</a>
         <a href="mailto:mac@suttonstrategies.com" aria-label="Email Mac" class="icon-link">
