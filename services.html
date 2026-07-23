@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who We Serve — Sutton Strategies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F7F4EC;
+  --cream-deep:#EFEAE0;
+  --green:#1E362B;
+  --green-deep:#16291F;
+  --ink:#182720;
+  --brass:#A98B4F;
+  --sage:#7E9184;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Instrument Sans', -apple-system, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 6vw}
+
+/* ——— eyebrow style echoes the letterspaced wordmark ——— */
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--brass)}
+.on-green .eyebrow{color:#C9AE73}
+
+/* ——— nav ——— */
+header{position:sticky;top:0;z-index:50;background:rgba(247,244,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(30,54,43,.12)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 6vw;max-width:1280px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:34px;height:34px}
+.wordmark{display:flex;flex-direction:column;line-height:1.15}
+.wordmark .primary{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.34em;color:var(--green)}
+.wordmark .secondary{font-size:8.5px;font-weight:600;letter-spacing:.5em;color:var(--green);opacity:.75}
+.nav-links{display:flex;gap:38px;align-items:center}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--green);opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:24px;background:none;border:none;cursor:pointer;padding:0}
+.nav-toggle span{display:block;width:100%;height:2px;background:var(--green)}
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;border:1px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:var(--green);color:var(--cream)}
+.btn.solid{background:var(--green);color:var(--cream)}
+.btn.solid:hover{background:var(--green-deep)}
+.on-green .btn{border-color:var(--cream);color:var(--cream)}
+.on-green .btn:hover{background:var(--cream);color:var(--green)}
+.nav-cta{padding:11px 22px}
+
+/* ——— hero ——— */
+.hero{position:relative;overflow:hidden;padding:110px 0 130px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(44px,5.6vw,76px);line-height:1.06;color:var(--green);letter-spacing:.01em}
+.hero h1 em{font-style:italic;font-weight:400}
+.mirror{margin-top:34px;max-width:520px;border-left:1px solid var(--brass);padding-left:24px}
+.mirror p{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--ink)}
+.mirror p em{font-style:italic;color:var(--green)}
+.hero-ctas{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap}
+.hero-mark{position:relative;display:flex;justify-content:center}
+.hero-mark svg{width:min(380px,70vw);height:auto}
+.s-stroke{fill:none;stroke:var(--green);stroke-width:5.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 2.6s cubic-bezier(.4,0,.2,1) .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){
+  .s-stroke{animation:none;stroke-dashoffset:0}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1 !important;transform:none !important}
+}
+
+/* ——— section scaffolding: alternating bound-prospectus surfaces ——— */
+section{padding:110px 0}
+.on-green{background:var(--green);color:var(--cream)}
+.on-green h2, .on-green h3{color:var(--cream)}
+.section-head{max-width:720px;margin-bottom:70px}
+.section-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,3.6vw,52px);line-height:1.12;margin-top:18px;color:var(--green)}
+.section-head p{margin-top:22px;font-size:18px;opacity:.85}
+
+/* approach */
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(247,244,236,.25)}
+.approach-item{padding:44px 36px 8px 0;border-right:1px solid rgba(247,244,236,.18)}
+.approach-item:last-child{border-right:none}
+.approach-item + .approach-item{padding-left:36px}
+.approach-item h3{font-family:var(--serif);font-weight:400;font-size:27px;margin-bottom:16px}
+.approach-item p{font-size:16px;line-height:1.7;opacity:.82}
+
+/* serve */
+.serve-list{border-top:1px solid rgba(30,54,43,.2)}
+.serve-row{display:grid;grid-template-columns:80px 1fr 1.4fr;gap:30px;align-items:baseline;padding:42px 0;border-bottom:1px solid rgba(30,54,43,.2)}
+.serve-row .marker{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--brass)}
+.serve-row h3{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--green)}
+.serve-row p{font-size:16.5px;opacity:.85}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.about-copy p{font-family:var(--serif);font-size:23px;line-height:1.55;font-weight:300}
+.about-copy p + p{margin-top:26px}
+.about-copy em{font-style:italic;color:#C9AE73}
+.partners{display:grid;gap:2px}
+.partner{background:rgba(247,244,236,.06);padding:34px 34px 30px;border-left:2px solid var(--brass)}
+.partner .name{font-family:var(--serif);font-size:25px;font-weight:400}
+.partner .role{font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#C9AE73;margin-top:6px}
+.partner p{margin-top:14px;font-size:15.5px;opacity:.8;line-height:1.7}
+
+/* contact */
+.contact{text-align:center;padding:130px 0}
+.contact h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4vw,58px);color:var(--green);margin-top:20px}
+.contact .sub{max-width:520px;margin:24px auto 0;font-size:17.5px;opacity:.85}
+.contact .btn{margin-top:44px}
+.quiet-note{margin-top:26px;font-size:13.5px;letter-spacing:.06em;color:var(--sage)}
+
+/* footer */
+footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
+.foot{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:30px;padding-bottom:36px;border-bottom:1px solid rgba(247,244,236,.15)}
+.foot .wordmark .primary,.foot .wordmark .secondary{color:var(--cream)}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.foot-links a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);opacity:.75;transition:opacity .2s}
+.foot-links a:hover{opacity:1}
+.icon-link svg{width:19px;height:19px;display:block}
+.foot-bottom{padding-top:28px;display:flex;flex-direction:column;gap:12px}
+.foot-bottom small{font-size:12.5px;opacity:.55;letter-spacing:.04em}
+.foot-disclosure{max-width:720px;line-height:1.6;display:block}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .nav-toggle{display:flex}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--cream);border-top:1px solid rgba(30,54,43,.12);max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .nav-links.open{max-height:400px}
+  .nav-links a{padding:16px 6vw;width:100%}
+  .nav-links .btn{margin:12px 6vw;width:calc(100% - 12vw)}
+  .hero{padding:70px 0 90px}
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .hero-mark{order:-1}
+  .hero-mark svg{width:200px}
+  .approach-grid{grid-template-columns:1fr}
+  .approach-item{border-right:none;border-bottom:1px solid rgba(247,244,236,.18);padding:36px 0}
+  .approach-item + .approach-item{padding-left:0}
+  .approach-item:last-child{border-bottom:none}
+  .serve-row{grid-template-columns:1fr;gap:10px}
+  .about-grid{grid-template-columns:1fr;gap:50px}
+  section{padding:80px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="brand" href="index.html" aria-label="Sutton Strategies home">
+      <img src="images/sutton-mark.png" alt="" width="34" height="32" style="display:block">
+      <span class="wordmark"><span class="primary">SUTTON</span><span class="secondary">STRATEGIES</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#approach">Approach</a>
+      <a href="services.html">Who We Serve</a>
+      <a href="about.html">The Firm</a>
+      <a class="btn nav-cta" href="contact.html">Start a Conversation</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero" style="padding:90px 0 70px">
+  <div class="wrap">
+    <p class="eyebrow">Who We Serve</p>
+    <h1 style="margin-top:26px;max-width:780px">Built for high-producing advisors <em>and the firms that want them.</em></h1>
+    <div class="mirror">
+      <p>Whether you're weighing a move or building a team, we work with a select group at a time — never a pipeline.</p>
+    </div>
+  </div>
+</section>
+
+<section id="serve">
+  <div class="wrap">
+    <div class="serve-list reveal">
+      <div class="serve-row">
+        <span class="marker">i.</span>
+        <h3>Wirehouse teams</h3>
+        <p>Advisors and teams weighing the full continuum — from a better seat at a major firm to supported independence models they may not know exist.</p>
+      </div>
+      <div class="serve-row">
+        <span class="marker">ii.</span>
+        <h3>Independent advisors</h3>
+        <p>FiNet, hybrid, and RIA practitioners looking for stronger economics, succession options, or a platform that finally matches how they run their business.</p>
+      </div>
+      <div class="serve-row">
+        <span class="marker">iii.</span>
+        <h3>Partner firms</h3>
+        <p>Wirehouses, regionals, and independent broker-dealers seeking advisors who fit — introduced thoughtfully, vetted honestly, and ready to grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="on-green" id="approach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The Approach</p>
+      <h2>Fewer engagements. Deeper work.</h2>
+      <p>Sutton Strategies is a boutique by design. We represent a select group of advisors and firms at a time, so every transition gets the attention a life-changing decision deserves.</p>
+    </div>
+    <div class="approach-grid reveal">
+      <div class="approach-item">
+        <h3>Discretion first</h3>
+        <p>Exploring a move is sensitive. Conversations stay confidential from the first call through the day you're ready — if you're ever ready. No pressure, no noise.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Fit over placement</h3>
+        <p>We map your practice, your clients, and your economics against the full landscape — wirehouse, regional, independent — and tell you the truth about each option, including staying put.</p>
+      </div>
+      <div class="approach-item">
+        <h3>The long view</h3>
+        <p>A transition isn't the finish line. We structure moves around where your business should be in ten years, not just the deal on the table today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow">Contact</p>
+    <h2>Every engagement begins<br>with a conversation.</h2>
+    <p class="sub">No commitment, no pitch. Tell us where your practice stands, and we'll tell you honestly what your options look like.</p>
+    <a class="btn solid" href="mailto:mac@suttonstrategies.com">mac@suttonstrategies.com</a>
+    <p class="quiet-note">All inquiries held in strict confidence.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span class="wordmark"><span class="primary">SUTTON</span><span class="secondary">STRATEGIES</span></span>
+      <div class="foot-links">
+        <a href="index.html#approach">Approach</a>
+        <a href="services.html">Who We Serve</a>
+        <a href="about.html">The Firm</a>
+        <a href="mailto:mac@suttonstrategies.com" aria-label="Email Mac" class="icon-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/mac-mcgovern-062093136/" target="_blank" rel="noopener" aria-label="Mac on LinkedIn" class="icon-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <small>© 2026 Sutton Strategies LLC · Westchester, New York</small>
+      <small class="foot-disclosure">Sutton Strategies is an independent recruiting firm and is not affiliated with, endorsed by, or acting on behalf of any broker-dealer, RIA, or financial institution referenced in conversation. All inquiries are held in strict confidence.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+</body>
+</html>
