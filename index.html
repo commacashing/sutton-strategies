@@ -341,7 +341,7 @@ navLinks.querySelectorAll('a').forEach(a => {
   if (!el) return;
   try {
     const feedUrl = encodeURIComponent('https://www.advisorhub.com/category/advisor-moves/feed/');
-    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}&count=5`);
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`);
     const data = await res.json();
     if (data.status !== 'ok' || !data.items || !data.items.length) throw new Error('feed unavailable');
     el.innerHTML = data.items.slice(0, 5).map(item => {
