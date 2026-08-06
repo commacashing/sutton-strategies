@@ -86,11 +86,14 @@ section{padding:110px 0}
 
 /* approach */
 .approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(247,244,236,.25)}
-.approach-item{padding:44px 36px 8px 0;border-right:1px solid rgba(247,244,236,.18)}
+.approach-item{position:relative;padding:44px 36px 8px 0;border-right:1px solid rgba(247,244,236,.18)}
 .approach-item:last-child{border-right:none}
 .approach-item + .approach-item{padding-left:36px}
-.approach-item h3{font-family:var(--serif);font-weight:400;font-size:27px;margin-bottom:16px}
+.approach-item .num{position:absolute;top:-6px;left:0;font-family:var(--serif);font-weight:300;font-size:64px;color:rgba(247,244,236,.14);line-height:1}
+.approach-item + .approach-item .num{left:36px}
+.approach-item h3{position:relative;font-family:var(--serif);font-weight:400;font-size:27px;margin-bottom:16px}
 .approach-item p{font-size:16px;line-height:1.7;opacity:.82}
+.pull-quote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(24px,2.4vw,32px);line-height:1.4;color:var(--cream);max-width:600px;margin-top:26px}
 
 /* serve */
 .serve-list{border-top:1px solid rgba(30,54,43,.2)}
@@ -214,18 +217,22 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
     <div class="section-head reveal">
       <p class="eyebrow">The Approach</p>
       <h2>Fewer engagements. Deeper work.</h2>
-      <p>Sutton Strategies is a boutique by design. We represent a select group of advisors and firms at a time, so every transition gets the attention a life-changing decision deserves.</p>
+      <p>Sutton Strategies is a boutique by design. We represent a select group of advisors and firms at a time.</p>
     </div>
+    <p class="pull-quote reveal">Every transition gets the attention a life-changing decision deserves.</p>
     <div class="approach-grid reveal">
       <div class="approach-item">
+        <span class="num">01</span>
         <h3>Discretion first</h3>
         <p>Exploring a move is sensitive. Conversations stay confidential from the first call through the day you're ready — if you're ever ready. No pressure, no noise.</p>
       </div>
       <div class="approach-item">
+        <span class="num">02</span>
         <h3>Fit over placement</h3>
         <p>We map your practice, your clients, and your economics against the full landscape — wirehouse, regional, independent — and tell you the truth about each option, including staying put.</p>
       </div>
       <div class="approach-item">
+        <span class="num">03</span>
         <h3>The long view</h3>
         <p>A transition isn't the finish line. We structure moves around where your business should be in ten years, not just the deal on the table today.</p>
       </div>
