@@ -96,19 +96,20 @@ section{padding:110px 0}
 .pull-quote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(24px,2.4vw,32px);line-height:1.4;color:var(--cream);max-width:600px;margin-top:26px}
 
 /* transition */
-.transition-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
-.transition-art svg{width:100%;height:auto;max-width:340px}
-.transition-headline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(40px,5vw,64px);line-height:1.15;color:#C9AE73}
+.transition-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.transition-art svg{width:100%;height:auto;max-width:520px}
+.transition-headline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(40px,5vw,64px);line-height:1.15}
 .shaft{stroke-dasharray:600;stroke-dashoffset:600;animation:tdraw 2s cubic-bezier(.4,0,.2,1) .2s forwards}
 @keyframes tdraw{to{stroke-dashoffset:0}}
-.arrow-head{animation:tclimb 1.6s ease-in-out 2.2s infinite}
-@keyframes tclimb{0%,100%{transform:translate(0,0)}50%{transform:translate(5px,-10px)}}
-.figure{animation:tbob 0.6s ease-in-out infinite}
-@keyframes tbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.frontleg{animation:tswingF 0.6s ease-in-out infinite;transform-origin:107px 160px}
-.backleg{animation:tswingB 0.6s ease-in-out infinite;transform-origin:107px 160px}
-@keyframes tswingF{0%,100%{transform:rotate(-18deg)}50%{transform:rotate(18deg)}}
-@keyframes tswingB{0%,100%{transform:rotate(18deg)}50%{transform:rotate(-18deg)}}
+.shaft-flow{stroke-dashoffset:0;opacity:0;animation:tdrawflow 2s cubic-bezier(.4,0,.2,1) .2s forwards, tflow 2.4s linear 2.3s infinite}
+@keyframes tdrawflow{to{opacity:.7}}
+@keyframes tflow{to{stroke-dashoffset:-360}}
+.figure{animation:tstep 2.2s ease-in-out infinite}
+@keyframes tstep{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.frontleg{animation:tstepF 2.2s ease-in-out infinite;transform-origin:-1px 40px}
+.backleg{animation:tstepB 2.2s ease-in-out infinite;transform-origin:-1px 40px}
+@keyframes tstepF{0%,50%,100%{transform:rotate(-8deg)}25%{transform:rotate(10deg)}}
+@keyframes tstepB{0%,50%,100%{transform:rotate(8deg)}75%{transform:rotate(-10deg)}}
 @media(max-width:900px){
   .transition-grid{grid-template-columns:1fr;gap:36px;text-align:center}
   .transition-art{display:flex;justify-content:center}
@@ -234,11 +235,10 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
   <div class="wrap transition-grid reveal">
     <div class="transition-art" aria-hidden="true">
       <svg viewBox="0 0 320 300">
-        <path class="shaft" d="M20 260 Q55 262 62 260 Q75 236 84 212 Q97 210 106 212 Q119 186 128 162 Q141 160 150 162 Q163 136 172 112 Q185 110 194 112 Q210 88 224 64" fill="none" stroke="#F7F4EC" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <g class="arrow-head">
-          <path d="M0 0 L-16 12 M0 0 L-2 19" fill="none" stroke="#F7F4EC" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(224,64)"/>
-        </g>
-        <g class="figure" transform="translate(108,120) scale(1.15)">
+        <path class="shaft" d="M20 260 Q55 262 62 260 Q75 236 84 212 Q97 210 106 212 Q119 186 128 162 Q141 160 150 162 Q163 136 172 112 Q185 110 194 112 Q210 88 224 64" fill="none" stroke="#F7F4EC" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="shaft-flow" d="M20 260 Q55 262 62 260 Q75 236 84 212 Q97 210 106 212 Q119 186 128 162 Q141 160 150 162 Q163 136 172 112 Q185 110 194 112 Q210 88 224 64" fill="none" stroke="#F7F4EC" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 14"/>
+        <path d="M224 64 L208 76 M224 64 L221 85" fill="none" stroke="#F7F4EC" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="figure" transform="translate(108,120) scale(1.5)">
           <circle cx="0" cy="-4" r="8" fill="none" stroke="#F7F4EC" stroke-width="2.2"/>
           <path d="M0 4 Q3 22 -1 40" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
           <path d="M0 12 Q-13 8 -19 -2" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
@@ -249,7 +249,7 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
         </g>
       </svg>
     </div>
-    <h2 class="transition-headline">Are you considering<br>a transition?</h2>
+    <h2 class="transition-headline" style="color:#C9AE73">Are you considering<br>a transition?</h2>
   </div>
 </section>
 
