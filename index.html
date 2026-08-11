@@ -99,20 +99,10 @@ section{padding:110px 0}
 .transition-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
 .transition-art svg{width:100%;height:auto;max-width:640px}
 .transition-headline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(40px,5vw,64px);line-height:1.15}
-.climber{animation:walkaway 6s linear infinite;transform-origin:170px 345px}
-@keyframes walkaway{
-  0%{transform:translate(170px,345px) scale(1.3);opacity:1}
-  88%{transform:translate(170px,72px) scale(0.4);opacity:1}
-  94%{transform:translate(170px,62px) scale(0.35);opacity:0}
-  95%{transform:translate(170px,345px) scale(1.3);opacity:0}
-  100%{transform:translate(170px,345px) scale(1.3);opacity:1}
-}
-.frontleg{animation:tstepF 2.2s ease-in-out infinite;transform-origin:-1px -28px}
-.backleg{animation:tstepB 2.2s ease-in-out infinite;transform-origin:-1px -28px}
-.frontarm{animation:tswingArm 2.2s ease-in-out infinite;transform-origin:0px -58px}
-@keyframes tstepF{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
-@keyframes tstepB{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-10deg)}}
-@keyframes tswingArm{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-10deg)}}
+.s-path{stroke-dasharray:900;stroke-dashoffset:900;animation:sdraw 2s cubic-bezier(.4,0,.2,1) .2s forwards}
+@keyframes sdraw{to{stroke-dashoffset:0}}
+.s-flow{opacity:.85;animation:sflow 2s linear 2.2s infinite}
+@keyframes sflow{to{stroke-dashoffset:-280}}
 @media(max-width:900px){
   .transition-grid{grid-template-columns:1fr;gap:36px;text-align:center}
   .transition-art{display:flex;justify-content:center}
@@ -237,27 +227,10 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
 <section class="on-green" id="transition">
   <div class="wrap transition-grid reveal">
     <div class="transition-art" aria-hidden="true">
-      <svg viewBox="0 0 340 400">
-        <path d="M170 40 L155 62 M170 40 L185 62" fill="none" stroke="#F7F4EC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M170 55 L70 380 M170 55 L270 380" fill="none" stroke="#F7F4EC" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="164.1" y1="60" x2="175.9" y2="60" stroke="#F7F4EC" stroke-width="2"/>
-        <line x1="156.8" y1="85" x2="183.2" y2="85" stroke="#F7F4EC" stroke-width="2"/>
-        <line x1="147.3" y1="117" x2="192.7" y2="117" stroke="#F7F4EC" stroke-width="2"/>
-        <line x1="135.6" y1="157" x2="204.4" y2="157" stroke="#F7F4EC" stroke-width="2"/>
-        <line x1="120.9" y1="207" x2="219.1" y2="207" stroke="#F7F4EC" stroke-width="2.2"/>
-        <line x1="102.7" y1="269" x2="237.3" y2="269" stroke="#F7F4EC" stroke-width="2.4"/>
-        <line x1="80.3" y1="345" x2="259.7" y2="345" stroke="#F7F4EC" stroke-width="2.6"/>
-        <g class="climber">
-          <g transform="translate(0,-30)">
-            <circle cx="0" cy="-40" r="8" fill="none" stroke="#F7F4EC" stroke-width="2.4"/>
-            <path d="M0 -32 Q2 -14 0 0" fill="none" stroke="#F7F4EC" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M0 -28 L-13 -6" fill="none" stroke="#F7F4EC" stroke-width="2" stroke-linecap="round"/>
-            <path d="M0 -28 L12 -8" fill="none" stroke="#F7F4EC" stroke-width="2" stroke-linecap="round"/>
-            <rect x="8" y="-14" width="9" height="11" rx="1" fill="none" stroke="#F7F4EC" stroke-width="1.8"/>
-            <path d="M0 0 L-11 30" fill="none" stroke="#F7F4EC" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M0 0 L11 30" fill="none" stroke="#F7F4EC" stroke-width="2.4" stroke-linecap="round"/>
-          </g>
-        </g>
+      <svg viewBox="0 0 220 400">
+        <path d="M160 40 L146 58 M160 40 L174 58" fill="none" stroke="#F7F4EC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="s-path" d="M100 380 C220 380,220 280,140 260 C60 240,60 140,140 120 C180 110,190 70,160 55" fill="none" stroke="#F7F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="s-flow" d="M100 380 C220 380,220 280,140 260 C60 240,60 140,140 120 C180 110,190 70,160 55" fill="none" stroke="#F7F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 20"/>
       </svg>
     </div>
     <h2 class="transition-headline" style="color:#C9AE73">Are you considering<br>a transition?</h2>
