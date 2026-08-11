@@ -96,18 +96,15 @@ section{padding:110px 0}
 .pull-quote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(24px,2.4vw,32px);line-height:1.4;color:var(--cream);max-width:600px;margin-top:26px}
 
 /* transition */
-.transition-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-.transition-art svg{width:100%;height:auto;max-width:520px}
+.transition-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.transition-art svg{width:100%;height:auto;max-width:640px}
 .transition-headline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(40px,5vw,64px);line-height:1.15}
-.shaft{stroke-dasharray:600;stroke-dashoffset:600;animation:tdraw 2s cubic-bezier(.4,0,.2,1) .2s forwards}
+.shaft{stroke-dasharray:900;stroke-dashoffset:900;animation:tdraw 2s cubic-bezier(.4,0,.2,1) .2s forwards}
 @keyframes tdraw{to{stroke-dashoffset:0}}
-.shaft-flow{stroke-dashoffset:0;opacity:0;animation:tdrawflow 2s cubic-bezier(.4,0,.2,1) .2s forwards, tflow 2.4s linear 2.3s infinite}
-@keyframes tdrawflow{to{opacity:.7}}
-@keyframes tflow{to{stroke-dashoffset:-360}}
-.figure{animation:tstep 2.2s ease-in-out infinite}
-@keyframes tstep{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.frontleg{animation:tstepF 2.2s ease-in-out infinite;transform-origin:-1px 40px}
-.backleg{animation:tstepB 2.2s ease-in-out infinite;transform-origin:-1px 40px}
+.shaft-flow{opacity:.55;animation:tflow 2.6s linear 2.2s infinite}
+@keyframes tflow{to{stroke-dashoffset:-320}}
+.frontleg{animation:tstepF 2.2s ease-in-out infinite;transform-origin:-1px -28px}
+.backleg{animation:tstepB 2.2s ease-in-out infinite;transform-origin:-1px -28px}
 @keyframes tstepF{0%,50%,100%{transform:rotate(-8deg)}25%{transform:rotate(10deg)}}
 @keyframes tstepB{0%,50%,100%{transform:rotate(8deg)}75%{transform:rotate(-10deg)}}
 @media(max-width:900px){
@@ -234,25 +231,27 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
 <section class="on-green" id="transition">
   <div class="wrap transition-grid reveal">
     <div class="transition-art" aria-hidden="true">
-      <svg viewBox="0 0 320 300">
-        <path class="shaft" d="M20 260 Q55 262 62 260 Q75 236 84 212 Q97 210 106 212 Q119 186 128 162 Q141 160 150 162 Q163 136 172 112 Q185 110 194 112 Q210 88 224 64" fill="none" stroke="#F7F4EC" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="shaft-flow" d="M20 260 Q55 262 62 260 Q75 236 84 212 Q97 210 106 212 Q119 186 128 162 Q141 160 150 162 Q163 136 172 112 Q185 110 194 112 Q210 88 224 64" fill="none" stroke="#F7F4EC" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 14"/>
-        <path d="M224 64 L208 76 M224 64 L221 85" fill="none" stroke="#F7F4EC" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <g class="figure" transform="translate(108,120) scale(1.5)">
-          <circle cx="0" cy="-4" r="8" fill="none" stroke="#F7F4EC" stroke-width="2.2"/>
-          <path d="M0 4 Q3 22 -1 40" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M0 12 Q-13 8 -19 -2" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
-          <rect x="-32" y="-8" width="13" height="17" rx="1" fill="none" stroke="#F7F4EC" stroke-width="2"/>
-          <path d="M0 12 Q15 18 20 30" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
-          <path class="backleg" d="M-1 40 Q-10 55 -13 68" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
-          <path class="frontleg" d="M-1 40 Q8 55 13 68" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
+      <svg viewBox="0 0 340 400">
+        <path class="shaft" d="M28 364 Q77 367 87 364 Q105 330 118 297 Q136 294 148 297 Q167 260 179 227 Q197 224 210 227 Q228 190 241 157 Q259 154 272 157 Q294 123 314 90" fill="none" stroke="#F7F4EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="shaft-flow" d="M28 364 Q77 367 87 364 Q105 330 118 297 Q136 294 148 297 Q167 260 179 227 Q197 224 210 227 Q228 190 241 157 Q259 154 272 157 Q294 123 314 90" fill="none" stroke="#F7F4EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 22"/>
+        <path d="M314 90 L292 107 M314 90 L310 119" fill="none" stroke="#F7F4EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="figure-mover">
+          <animateMotion dur="7s" repeatCount="indefinite" rotate="0" path="M28 364 Q77 367 87 364 Q105 330 118 297 Q136 294 148 297 Q167 260 179 227 Q197 224 210 227 Q228 190 241 157 Q259 154 272 157 Q294 123 314 90"/>
+          <g class="figure" transform="scale(1.6)">
+            <circle cx="0" cy="-72" r="8" fill="none" stroke="#F7F4EC" stroke-width="2.2"/>
+            <path d="M0 -64 Q3 -46 -1 -28" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M0 -56 Q-13 -60 -19 -70" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
+            <rect x="-32" y="-76" width="13" height="17" rx="1" fill="none" stroke="#F7F4EC" stroke-width="2"/>
+            <path d="M0 -56 Q15 -50 20 -38" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
+            <path class="backleg" d="M-1 -28 Q-10 -13 -13 0" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
+            <path class="frontleg" d="M-1 -28 Q8 -13 13 0" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
+          </g>
         </g>
       </svg>
     </div>
     <h2 class="transition-headline" style="color:#C9AE73">Are you considering<br>a transition?</h2>
   </div>
 </section>
-
 <section class="contact" id="contact">
   <div class="wrap reveal">
     <p class="eyebrow">Contact</p>
