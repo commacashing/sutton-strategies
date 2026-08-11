@@ -105,8 +105,10 @@ section{padding:110px 0}
 @keyframes tflow{to{stroke-dashoffset:-320}}
 .frontleg{animation:tstepF 2.2s ease-in-out infinite;transform-origin:-1px -28px}
 .backleg{animation:tstepB 2.2s ease-in-out infinite;transform-origin:-1px -28px}
-@keyframes tstepF{0%,50%,100%{transform:rotate(-8deg)}25%{transform:rotate(10deg)}}
-@keyframes tstepB{0%,50%,100%{transform:rotate(8deg)}75%{transform:rotate(-10deg)}}
+.frontarm{animation:tswingArm 2.2s ease-in-out infinite;transform-origin:0px -58px}
+@keyframes tstepF{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
+@keyframes tstepB{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-10deg)}}
+@keyframes tswingArm{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-10deg)}}
 @media(max-width:900px){
   .transition-grid{grid-template-columns:1fr;gap:36px;text-align:center}
   .transition-art{display:flex;justify-content:center}
@@ -236,13 +238,14 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
         <path class="shaft-flow" d="M28 364 Q77 367 87 364 Q105 330 118 297 Q136 294 148 297 Q167 260 179 227 Q197 224 210 227 Q228 190 241 157 Q259 154 272 157 Q294 123 314 90" fill="none" stroke="#F7F4EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 22"/>
         <path d="M314 90 L292 107 M314 90 L310 119" fill="none" stroke="#F7F4EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
        <g class="figure-mover">
-          <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M28 364 Q77 367 87 364 Q105 330 118 297 Q136 294 148 297 Q167 260 179 227 Q197 224 210 227 Q228 190 241 157 Q259 154 272 157 Q294 123 314 90"/>
-          <g class="figure" transform="scale(1.6)">
+          <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" path="M28 364 Q77 367 87 364 Q105 330 118 297 Q136 294 148 297 Q167 260 179 227 Q197 224 210 227 Q228 190 241 157 Q259 154 272 157 Q294 123 314 90"/>
+          <g class="figure" transform="scale(1.05)">
             <circle cx="0" cy="-72" r="8" fill="none" stroke="#F7F4EC" stroke-width="2.2"/>
             <path d="M0 -64 Q3 -46 -1 -28" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
             <path d="M0 -58 Q-8 -50 -13 -40" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
-            <rect x="-22" y="-46" width="9" height="12" rx="1" fill="none" stroke="#F7F4EC" stroke-width="2"/>
-            <path d="M0 -58 Q14 -66 22 -80" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M-13 -40 Q-15 -44 -17.5 -42" fill="none" stroke="#F7F4EC" stroke-width="1.6" stroke-linecap="round"/>
+            <rect x="-21.5" y="-42" width="8" height="10" rx="2" fill="none" stroke="#F7F4EC" stroke-width="2"/>
+            <path class="frontarm" d="M0 -58 Q10 -50 14 -38" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
             <path class="backleg" d="M-1 -28 Q-10 -13 -13 0" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
             <path class="frontleg" d="M-1 -28 Q8 -13 13 0" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linecap="round"/>
           </g>
