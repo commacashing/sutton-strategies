@@ -98,8 +98,8 @@ section{padding:110px 0}
 
 /* transition */
 .transition-grid{display:grid;grid-template-columns:0.75fr 1.25fr;gap:40px;align-items:center}
-.transition-art{position:absolute;left:0;top:50%;transform:translateY(-50%)}
-.transition-headline{grid-column:2}
+.transition-art{position:absolute;left:0;top:50%;transform:translateY(-50%);width:53vw}
+.transition-headline{position:absolute;left:73vw;top:50%;transform:translateY(-50%);max-width:22vw}
 .transition-headline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(40px,5vw,64px);line-height:1.15}
 @media(max-width:900px){
   .transition-grid{grid-template-columns:1fr;gap:36px;text-align:center}
@@ -225,7 +225,7 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
 <section class="on-green" id="transition">
   <div class="wrap transition-grid reveal">
     <div class="transition-art" aria-hidden="true">
-      <svg viewBox="0 -40 300 530" style="width:100%;max-width:2900px;height:auto">
+      <svg viewBox="0 -40 300 530" style="width:100%;height:auto">
         <line x1="0" y1="100" x2="190" y2="100" stroke="#F7F4EC" stroke-width="20"/>
         <path d="M180 70 L250 100 L180 130 Z" fill="#F7F4EC"/>
         <line x1="0" y1="280" x2="190" y2="280" stroke="#F7F4EC" stroke-width="20"/>
