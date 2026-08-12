@@ -72,7 +72,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:20px 6
 
 /* ——— section scaffolding: alternating bound-prospectus surfaces ——— */
 section{padding:110px 0}
-#transition{padding:60px 0;position:relative;overflow:hidden}
+#transition{padding:80px 0;position:relative;min-height:600px}
 .on-green{background:var(--green);color:var(--cream)}
 .on-green h2, .on-green h3{color:var(--cream)}
 .section-head{max-width:720px;margin-bottom:70px}
@@ -97,7 +97,7 @@ section{padding:110px 0}
 .pull-quote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(24px,2.4vw,32px);line-height:1.4;color:var(--cream);max-width:600px;margin-top:26px}
 
 /* transition */
-.transition-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.transition-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:center}
 .transition-art{position:absolute;left:0;top:50%;transform:translateY(-50%)}
 .transition-headline{grid-column:2}
 .transition-headline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(40px,5vw,64px);line-height:1.15}
@@ -225,17 +225,17 @@ footer{background:var(--green-deep);color:var(--cream);padding:60px 0 40px}
 <section class="on-green" id="transition">
   <div class="wrap transition-grid reveal">
     <div class="transition-art" aria-hidden="true">
-      <svg viewBox="0 0 300 380" style="width:100%;max-width:460px;height:auto">
-        <line x1="0" y1="90" x2="210" y2="90" stroke="#F7F4EC" stroke-width="10"/>
-        <path d="M205 75 L235 90 L205 105 Z" fill="#F7F4EC"/>
-        <line x1="0" y1="205" x2="210" y2="205" stroke="#F7F4EC" stroke-width="10"/>
-        <path d="M205 190 L235 205 L205 220 Z" fill="#F7F4EC"/>
-        <line x1="0" y1="263" x2="210" y2="263" stroke="#F7F4EC" stroke-width="10"/>
-        <path d="M205 248 L235 263 L205 278 Z" fill="#F7F4EC"/>
-        <line x1="0" y1="320" x2="210" y2="320" stroke="#F7F4EC" stroke-width="10"/>
-        <path d="M205 305 L235 320 L205 335 Z" fill="#F7F4EC"/>
-        <path d="M0 148 L130 148 C170 148 190 78 190 38" fill="none" stroke="#A98B4F" stroke-width="10" stroke-linecap="round"/>
-        <path d="M175 38 L190 8 L205 38 Z" fill="#A98B4F"/>
+      <svg viewBox="0 0 300 380" style="width:100%;max-width:520px;height:auto">
+        <line x1="0" y1="90" x2="210" y2="90" stroke="#F7F4EC" stroke-width="14"/>
+        <path d="M200 70 L242 90 L200 110 Z" fill="#F7F4EC"/>
+        <line x1="0" y1="205" x2="210" y2="205" stroke="#F7F4EC" stroke-width="14"/>
+        <path d="M200 185 L242 205 L200 225 Z" fill="#F7F4EC"/>
+        <line x1="0" y1="263" x2="210" y2="263" stroke="#F7F4EC" stroke-width="14"/>
+        <path d="M200 243 L242 263 L200 283 Z" fill="#F7F4EC"/>
+        <line x1="0" y1="320" x2="210" y2="320" stroke="#F7F4EC" stroke-width="14"/>
+        <path d="M200 300 L242 320 L200 340 Z" fill="#F7F4EC"/>
+        <path d="M0 148 L130 148 C170 148 190 78 190 38" fill="none" stroke="#A98B4F" stroke-width="14" stroke-linecap="round"/>
+        <path d="M168 38 L190 2 L212 38 Z" fill="#A98B4F"/>
       </svg>
     </div>
     <h2 class="transition-headline" style="color:#C9AE73">Are you considering<br>a transition?</h2>
